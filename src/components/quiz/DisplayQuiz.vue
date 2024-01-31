@@ -1,5 +1,5 @@
 <script setup>
-import QuizViewA from './QuizViewA.vue';
+import QuizView from './Quiz.vue';
 import { useQuizStore } from '@/stores/quizStore';
 import { storeToRefs } from 'pinia';
 
@@ -15,7 +15,7 @@ const { score } = storeToRefs(store);
     <button class :disabled="isActive">Submit</button>
   </div>
   <div>
-    <QuizViewA/>
+    <QuizView/>
   </div>
 </template>
 
