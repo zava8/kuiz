@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "options": {
+        "A": "Mars",
+        "B": "Venus",
+        "C": "Jupiter",
+        "D": "Saturn"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "options": {
+        "A": "Charles Dickens",
+        "B": "William Shakespeare",
+        "C": "Jane Austen",
+        "D": "Mark Twain"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "What is the capital of Japan?",
+      "options": {
+        "A": "Beijing",
+        "B": "Seoul",
+        "C": "Tokyo",
+        "D": "Bangkok"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "question": "In which year did the Titanic sink?",
+      "options": {
+        "A": "1912",
+        "B": "1920",
+        "C": "1905",
+        "D": "1935"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "options": {
+        "A": "Vincent van Gogh",
+        "B": "Leonardo da Vinci",
+        "C": "Pablo Picasso",
+        "D": "Michelangelo"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "What is the largest mammal in the world?",
+      "options": {
+        "A": "Elephant",
+        "B": "Blue Whale",
+        "C": "Giraffe",
+        "D": "Polar Bear"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "Who is the author of 'To Kill a Mockingbird'?",
+      "options": {
+        "A": "Harper Lee",
+        "B": "J.K. Rowling",
+        "C": "George Orwell",
+        "D": "Ernest Hemingway"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "question": "Which element has the chemical symbol 'O'?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Gold",
+        "C": "Silver",
+        "D": "Iron"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "options": {
+        "A": "Atlantic Ocean",
+        "B": "Indian Ocean",
+        "C": "Southern Ocean",
+        "D": "Pacific Ocean"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "Who invented the telephone?",
+      "options": {
+        "A": "Thomas Edison",
+        "B": "Alexander Graham Bell",
+        "C": "Nikola Tesla",
+        "D": "Marie Curie"
+      },
+      "correct_answer": "B"
+    }
+  ]
+}
