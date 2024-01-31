@@ -17,7 +17,7 @@ const selectedOption = ref('');
           v-for="(option, k, i) in quiz.options"
           :key="i"
         >
-          <form :on-submit="calculateScore">
+          <form>
             <label :for="`option-${k}`" class="label">
               <input
               type="radio"
