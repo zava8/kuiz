@@ -7,10 +7,8 @@ export const useQuizStore = defineStore('counter', () => {
   const score = ref(0);
 
   const calculateScore = (answer, correctAnswer) => {
-    if (answer === correctAnswer) { 
+    if (answer === correctAnswer && score.value < 10) { 
       score.value+=1;
-    } else if (score.value > 0 && answer !== correctAnswer) {
-      score.value-=1;
     }
     console.log(answer, correctAnswer)
     return null;
