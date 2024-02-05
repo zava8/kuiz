@@ -1,22 +1,45 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import quiz from '../quiz.json'
+import data from '../quiz.json'
 
-export const useQuizStore = defineStore('counter', () => {
-  const quizzes = ref(quiz);
+export const useQuizStore = defineStore('quiz', () => {
+  const quizzes = ref(data);
   const score = ref(0);
+  const selectedIndex = ref({});
 
-  const calculateScore = (answer, correctAnswer) => {
-    if (answer === correctAnswer && score.value < 10) { 
-      score.value+=1;
-    }
-    console.log(answer, correctAnswer)
+
+  const setSelectedIndex = (quizIndx, index) => {
+    selectedIndex.value[quizIndx] = index;
+    console.log(selectedIndex.value)
+  }
+  
+
+  const calculateScore = (answer, correctAnswer, index) => {
+    index = parseInt(index);
+
+    if (!quizzes.value.questions[index].is_checked) { 
+      // console.log(answer, correctAnswer, index)
+      if (answer === correctAnswer) {
+        score.value++;
+      }
+    } else if (quizzes.value.questions[index].is_checked) {
+
+        if(answer === correctAnswer) {
+            return;
+        } else {
+            quizzes.value.questions[index].is_checked
+           score.value-=1;
+         }
+      }
+    
     return null;
   };
 
-  const displayScore = computed(() => {
-    return score.value;
-  })
-
-  return { quizzes, score, calculateScore, displayScore }
+  return { 
+    quizzes,
+    score,
+    selectedIndex,
+    setSelectedIndex,
+    calculateScore 
+  }
 })
