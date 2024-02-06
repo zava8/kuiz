@@ -10,30 +10,23 @@ export const useQuizStore = defineStore('quiz', () => {
 
   const setSelectedIndex = (quizIndx, index) => {
     selectedIndex.value[quizIndx] = index;
-    console.log(selectedIndex.value)
   }
   
 
   const calculateScore = (answer, correctAnswer, index) => {
     index = parseInt(index);
 
-    if (!quizzes.value.questions[index].is_checked) { 
-      // console.log(answer, correctAnswer, index)
-      if (answer === correctAnswer) {
-        score.value++;
+    if (answer === correctAnswer) {
+      score.value++;
+      quizzes.value.questions[index].is_checked = true;
+    } else {
+      // check if user has previously answered this question
+        if (quizzes.value.questions[index].is_checked) {
+          score.value--;
+          quizzes.value.questions[index].is_checked = false;
+        }
       }
-    } else if (quizzes.value.questions[index].is_checked) {
-
-        if(answer === correctAnswer) {
-            return;
-        } else {
-            quizzes.value.questions[index].is_checked
-           score.value-=1;
-         }
-      }
-    
-    return null;
-  };
+    }
 
   return { 
     quizzes,
