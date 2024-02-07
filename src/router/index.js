@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Quiz from '@/views/Quiz.vue'
+import Home from '@/views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,13 +8,19 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Home
     },
     {
-      path: '/sectionB',
-      name: 'section',
-      component: HomeView
+      path: '/question/:id',
+      name: 'quiz',
+      component: Quiz,
+      meta: { transition: 'slide-fade' },
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'Notfound',
+      component:  () => import('../views/NotFound.vue')
+    }
   ]
 })
 
