@@ -1,16 +1,20 @@
 {
   "questions": [
     {
-      "question": "Which planet is known as the Red Planet?",
+      "id": 1,
+      "question": "Which african country makes the best jellof rice?",
       "options": {
-        "A": "Mars",
-        "B": "Venus",
-        "C": "Jupiter",
-        "D": "Saturn"
+        "A": "Senegal",
+        "B": "Nigeria",
+        "C": "Ivory Coast",
+        "D": "Ghana"
       },
-      "correct_answer": "A"
+      "correct_answer": "A",
+      "is_checked": false,
+      "feedback": "Senegal makes the best jellof rice."
     },
     {
+      "id": 2,
       "question": "Who wrote 'Romeo and Juliet'?",
       "options": {
         "A": "Charles Dickens",
@@ -18,9 +22,12 @@
         "C": "Jane Austen",
         "D": "Mark Twain"
       },
-      "correct_answer": "B"
+      "correct_answer": "B",
+      "is_checked": false,
+      "feedback": "William Shakespeare penned the play in the early stages of his career and first performed around 1596."
     },
     {
+      "id": 3,
       "question": "What is the capital of Japan?",
       "options": {
         "A": "Beijing",
@@ -28,77 +35,9 @@
         "C": "Tokyo",
         "D": "Bangkok"
       },
-      "correct_answer": "C"
-    },
-    {
-      "question": "In which year did the Titanic sink?",
-      "options": {
-        "A": "1912",
-        "B": "1920",
-        "C": "1905",
-        "D": "1935"
-      },
-      "correct_answer": "A"
-    },
-    {
-      "question": "Who painted the Mona Lisa?",
-      "options": {
-        "A": "Vincent van Gogh",
-        "B": "Leonardo da Vinci",
-        "C": "Pablo Picasso",
-        "D": "Michelangelo"
-      },
-      "correct_answer": "B"
-    },
-    {
-      "question": "What is the largest mammal in the world?",
-      "options": {
-        "A": "Elephant",
-        "B": "Blue Whale",
-        "C": "Giraffe",
-        "D": "Polar Bear"
-      },
-      "correct_answer": "B"
-    },
-    {
-      "question": "Who is the author of 'To Kill a Mockingbird'?",
-      "options": {
-        "A": "Harper Lee",
-        "B": "J.K. Rowling",
-        "C": "George Orwell",
-        "D": "Ernest Hemingway"
-      },
-      "correct_answer": "A"
-    },
-    {
-      "question": "Which element has the chemical symbol 'O'?",
-      "options": {
-        "A": "Oxygen",
-        "B": "Gold",
-        "C": "Silver",
-        "D": "Iron"
-      },
-      "correct_answer": "A"
-    },
-    {
-      "question": "What is the largest ocean on Earth?",
-      "options": {
-        "A": "Atlantic Ocean",
-        "B": "Indian Ocean",
-        "C": "Southern Ocean",
-        "D": "Pacific Ocean"
-      },
-      "correct_answer": "D"
-    },
-    {
-      "question": "Who invented the telephone?",
-      "options": {
-        "A": "Thomas Edison",
-        "B": "Alexander Graham Bell",
-        "C": "Nikola Tesla",
-        "D": "Marie Curie"
-      },
-      "correct_answer": "B"
+      "correct_answer": "C",
+      "is_checked": false,
+      "feedback": "Tokyo, the capital of Japan, is situated at the head of Tokyo Bay on the Pacific coast of central Honshu."
     }
   ]
 }
