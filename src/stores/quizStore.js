@@ -11,7 +11,6 @@ export const useQuizStore = defineStore('quiz', () => {
 
 
   const setSelectedIndex = (quizIndx, index) => {
-    console.log(selectedIndex.value);
     selectedIndex.value[quizIndx] = index;
   }
   
