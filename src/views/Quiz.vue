@@ -31,7 +31,6 @@ const handleSubmit = () => {
 }
 
 const showFeedback = computed(() => {
-  console.log(selectedOption.value)
   return (
     isFinished.value && 
     quizzes.value.questions[quizIndx.value].correct_answer !== selectedOption.value
