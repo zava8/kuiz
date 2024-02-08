@@ -1,35 +1,69 @@
-# .
+# Quiz App
 
-This template should help get you started developing with Vue 3 in Vite.
+## Table of Contents
 
-## Recommended IDE Setup
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This is a simple quiz application built with Vue.js, Vue Router, and Pinia for state management.
 
-## Customize configuration
+## Features
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Navigation between quiz questions using Vue Router.
+- State management using Pinia.
+- Responsive design for both desktop and mobile devices.
 
-## Project Setup
+## Installation
 
-```sh
+Clone the repository:
+
+```bash
+git clone https://github.com/ikennarichard/quiz-app.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd quiz-app
+```
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Run the development server:
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Usage
 
-```sh
-npm run build
-```
+- Upon launching the app, users are presented home screen.
+- Select start quiz to answering questions.
+- Navigate through the quiz questions using the next and previous buttons.
+- Select an answer for each question and submit your answers.
+- After submitting, view your score and review the quiz.
 
-### Lint with [ESLint](https://eslint.org/)
+## Dependencies
 
-```sh
-npm run lint
-```
+**Vue.js** - A progressive JavaScript framework for building user interfaces.
+**Vue Router** - The official router for Vue.js.
+**Pinia** - Intuitive, type safe, light and flexible Store for Vue using the composition API.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit any bug fixes or enhancements as pull requests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+## Acknowledgements
+
+This project was inspired by [Platforms Innovations Limited](https://platforms.com.ng).
