@@ -43,11 +43,11 @@
     display: flex;
     flex-direction: column;
     background-color: #f4f4f4;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto;
     padding: 1em;
     border: 1px solid #888;
     border-radius: 6px;
-    width: 40%;
+    width: 45%;
     animation: view 1.1s forwards linear;
   }
 
