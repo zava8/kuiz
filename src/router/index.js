@@ -14,12 +14,12 @@ const router = createRouter({
       path: '/question/:id',
       name: 'quiz',
       component: Quiz,
-      meta: { transition: 'slide-fade' },
+      meta: { transition: 'slide-fade' }
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'Notfound',
-      component:  () => import('../views/NotFound.vue')
+      component: () => import('../views/NotFound.vue')
     }
   ]
 })

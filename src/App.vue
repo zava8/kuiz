@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div class="app">
@@ -8,7 +6,7 @@
       <h1>Quizzy</h1>
     </header>
     <main>
-      <router-view v-slot="{ Component, route}">
+      <router-view v-slot="{ Component, route }">
         <transition :name="route.meta.transition">
           <component :is="Component" :key="route.path" />
         </transition>
@@ -52,5 +50,4 @@ main {
   transform: translateX(20px);
   opacity: 0;
 }
-
 </style>
