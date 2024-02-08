@@ -1,74 +1,80 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { ref, watch, computed } from 'vue';
-import { storeToRefs } from 'pinia'
-import {useQuizStore} from '@/stores/quizStore';
-import { useRoute } from 'vue-router';
-import DisplayScore from '../components/DisplayScore.vue'
+  import { ref, watch, computed } from 'vue';
+  import { storeToRefs } from 'pinia'
+  import {useQuizStore} from '@/stores/quizStore';
+  import { useRoute, useRouter } from 'vue-router';
+  import DisplayScore from '../components/DisplayScore.vue'
 
-const route = useRoute();
-const store = useQuizStore();
-const { calculateScore, setSelectedIndex } = store;
-const {
-  score,
-  quizzes,
-  selectedIndex,
-  isFinished, 
-  options
-} = storeToRefs(store);
+  const route = useRoute();
+  const router = useRouter();
+  const store = useQuizStore();
+  const { calculateScore, setSelectedIndex } = store;
+  const {
+    score,
+    quizzes,
+    selectedIndex,
+    isFinished, 
+    options
+  } = storeToRefs(store);
 
-const questionNo = ref(parseInt(route.params.id));
-const quizIndx = ref(quizzes.value.questions.findIndex((item) => item.id === questionNo.value));
-const  quiz = ref(quizzes.value.questions[quizIndx.value]);
-const showScoreModal = ref(false);
+  const questionNo = ref(parseInt(route.params.id));
+  const quizIndx = ref(quizzes.value.questions.findIndex((item) => item.id === questionNo.value));
+  const  quiz = ref(quizzes.value.questions[quizIndx.value]);
+  const showScoreModal = ref(false);
 
-const selectedOption = ref(options.value[quizIndx.value]);
+  const selectedOption = ref(options.value[quizIndx.value]);
 
-const handleSubmit = () => {
-  // what happens when we submit
-  isFinished.value = true;
-  showScoreModal.value = true;
-}
+  const handleSubmit = () => {
+    // what happens when we submit
+    isFinished.value = true;
+    showScoreModal.value = true;
+  }
 
-const showFeedback = computed(() => {
-  return (
-    isFinished.value && 
-    quizzes.value.questions[quizIndx.value].correct_answer !== selectedOption.value
-  );
-})
+  const showFeedback = computed(() => {
+    return (
+      isFinished.value && 
+      quizzes.value.questions[quizIndx.value].correct_answer !== selectedOption.value
+    );
+  })
+
+  const restart = () => {
+    router.push({name: 'quiz', params:{id: 1}})
+    isFinished.value = false;
+    selectedIndex.value[quizIndx] = undefined;
+    score.value = 0;
+  }
 
 
-watch(() => route.params.id, (newId) => {
-   questionNo.value = newId
-})
+  watch(() => route.params.id, (newId) => {
+    questionNo.value = newId
+  })
 
-watch(questionNo, (num) => {
-  quiz.value = quizzes.value.questions.find((item) => item.id === num);
-})
+  watch(questionNo, (num) => {
+    quiz.value = quizzes.value.questions.find((item) => item.id === num);
+  })
 
-const quizLength = computed(() => quizzes.value.questions.length)
+  const quizLength = computed(() => quizzes.value.questions.length)
 
-const previous = computed(() => {
-  const currentIndex = quizzes.value.questions.findIndex((item) => item.id === questionNo.value);
-  const previousIndex = currentIndex > 0 ? currentIndex - 1 : 0;
-  return quizzes.value.questions[previousIndex].id;
-});
+  const previous = computed(() => {
+    const currentIndex = quizzes.value.questions.findIndex((item) => item.id === questionNo.value);
+    const previousIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+    return quizzes.value.questions[previousIndex].id;
+  });
 
-const next = computed(() => {
-  const currentIndex = quizzes.value.questions.findIndex((item) => item.id === questionNo.value);
-  const nextIndex = currentIndex + 1;
-  return quizzes.value.questions[nextIndex].id;
-});
-
+  const next = computed(() => {
+    const currentIndex = quizzes.value.questions.findIndex((item) => item.id === questionNo.value);
+    const nextIndex = currentIndex + 1;
+    return quizzes.value.questions[nextIndex].id;
+  });
 </script>
 
 <template>
-  <b class="progress-indicator">
-    Question {{ questionNo }} / 
-    {{quizzes.questions.length}}
-  </b>
-  <button type="reset" class="restart">Restart</button>
   <div class="question-container">
+    <b class="progress-indicator">
+      Question {{ questionNo }} / 
+      {{quizzes.questions.length}}
+    </b>
       <b class="question">{{quiz.question}}</b>
       <!-- display feedback -->
       <transition name="feedback">
@@ -90,8 +96,7 @@ const next = computed(() => {
                 'correct': selectedIndex[quizIndx] === i && k === quiz.correct_answer,
                 'incorrect': selectedIndex[quizIndx] === i && k !== quiz.correct_answer
               }"
-
-              @click="setSelectedIndex(quizIndx, i)"
+              @click="!isFinished && setSelectedIndex(quizIndx, i)"
               >
               <input
               type="radio"
@@ -99,6 +104,7 @@ const next = computed(() => {
               :id="`question-${i}-option-${k}`"  
               :name="`question-option-${i}`"
               :value="k"
+              :disabled="isFinished"
               v-model="selectedOption"
               @change="calculateScore(selectedOption, quiz.correct_answer, questionNo-1)"
             >
@@ -128,6 +134,7 @@ const next = computed(() => {
               class="submit-btn"
               type="button" 
               @click="handleSubmit"
+              :disabled="isFinished"
             >
               Submit
             </button>
@@ -142,7 +149,13 @@ const next = computed(() => {
     :quiz-len="quizLength"
     @close-modal="showScoreModal = !showScoreModal"
   />
-  
+  <button 
+    v-if="isFinished"
+    @click="restart"
+    class="restart"
+  >
+  Restart
+</button>
 </template>
 
 <style>
@@ -158,7 +171,8 @@ const next = computed(() => {
 
   .question {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
   }
 
   .feedback-card {
@@ -232,12 +246,6 @@ const next = computed(() => {
     font-size: 1rem;
   }
 
-  .progress-indicator {
-    position: absolute;
-    right: 10px;
-    top: 0.9em;
-  }
-
   .correct {
     background-color: green;
     color: white;
@@ -254,10 +262,12 @@ const next = computed(() => {
     background-color: purple;
   }
 
+  .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   .restart {
-    position: absolute;
-    left: 20px;
-    top: 0.6em;
     background-color: #4caf50;
     border: none;
     color: white;
@@ -274,9 +284,5 @@ const next = computed(() => {
   
   .restart:hover {
     background-color: #45a049;
-  }
-  
-  .restart:active {
-    background-color: #367736;
   }
 </style>
