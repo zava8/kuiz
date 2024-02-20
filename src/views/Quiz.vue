@@ -34,9 +34,14 @@ const showFeedback = computed(() => {
 
 const restart = () => {
   router.push({ name: 'quiz', params: { id: 1 } })
-  isFinished.value = false
-  selectedIndex.value[quizIndx] = undefined
-  score.value = 0
+  const timer = setTimeout(() => {
+    window.location.reload()
+  },0)
+   timer()
+
+  return () => {
+    clearTimeout(timer)
+  }
 }
 
 watch(
