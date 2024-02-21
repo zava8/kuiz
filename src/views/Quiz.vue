@@ -33,7 +33,7 @@ const showFeedback = computed(() => {
 })
 
 const restart = () => {
-  router.push({ name: 'quiz', params: { id: 1 } })
+  router.push({ name: 'home'})
   const timer = setTimeout(() => {
     window.location.reload()
   },0)
