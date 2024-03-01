@@ -2,29 +2,29 @@
   "questions": [
     {
       "id": 1,
-      "question": "Which african country makes the best jellof rice?",
+      "question": "अ पuरe सuबसटaनce वhich coनटaiनस oनलय oनe टयपe oफ aटoम iस caललeड",
       "options": {
-        "A": "Senegal",
-        "B": "Nigeria",
-        "C": "Ivory Coast",
-        "D": "Ghana"
+        "A": "अन eलeमeनट",
+        "B": "a coमपouनड",
+        "C": "a सoलiड",
+        "D": "a लiकuiड"
       },
       "correct_answer": "A",
       "is_checked": false,
-      "feedback": "Senegal makes the best jellof rice."
+      "feedback": "अन eलeमeनट iस मaडe uप oफ oनलय oनe टयपe oफ aटoम."
     },
     {
       "id": 2,
-      "question": "Who wrote 'Romeo and Juliet'?",
+      "question": "तhe समaललeसट पaरटicलe टhaट caन टaकe पaरट iन cheमicaल रeacटioनस iस?",
       "options": {
-        "A": "Charles Dickens",
-        "B": "William Shakespeare",
-        "C": "Jane Austen",
-        "D": "Mark Twain"
+        "A": "अटoम",
+        "B": "मoलecuलe",
+        "C": "बoटh अटoम and मoलecuलe",
+        "D": "नoनe oफ टheसe"
       },
-      "correct_answer": "B",
+      "correct_answer": "C",
       "is_checked": false,
-      "feedback": "William Shakespeare penned the play in the early stages of his career and first performed around 1596."
+      "feedback": "तhe समaललeसट पaरटicलe टhaट caन टaकe पaरट iन cheमicaल रeacटioनस iस बoटh aन aटoम aनड a मoलecuलe"
     },
     {
       "id": 3,

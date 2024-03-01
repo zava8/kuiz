@@ -1,0 +1,43 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which african country makes the best jellof rice?",
+      "options": {
+        "A": "Senegal",
+        "B": "Nigeria",
+        "C": "Ivory Coast",
+        "D": "Ghana"
+      },
+      "correct_answer": "A",
+      "is_checked": false,
+      "feedback": "Senegal makes the best jellof rice."
+    },
+    {
+      "id": 2,
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "options": {
+        "A": "Charles Dickens",
+        "B": "William Shakespeare",
+        "C": "Jane Austen",
+        "D": "Mark Twain"
+      },
+      "correct_answer": "B",
+      "is_checked": false,
+      "feedback": "William Shakespeare penned the play in the early stages of his career and first performed around 1596."
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Japan?",
+      "options": {
+        "A": "Beijing",
+        "B": "Seoul",
+        "C": "Tokyo",
+        "D": "Bangkok"
+      },
+      "correct_answer": "C",
+      "is_checked": false,
+      "feedback": "Tokyo, the capital of Japan, is situated at the head of Tokyo Bay on the Pacific coast of central Honshu."
+    }
+  ]
+}
