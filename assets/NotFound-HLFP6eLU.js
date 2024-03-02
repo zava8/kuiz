@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t,a as c}from"./index-aUrRZno8.js";const n={},s=c("h2",null,"Not found",-1),_=[s];function a(r,d){return t(),o("div",null,_)}const f=e(n,[["render",a]]);export{f as default};
