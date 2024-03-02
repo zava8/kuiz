@@ -73,7 +73,7 @@ const next = computed(() => {
 <template>
   <div class="question-container">
     <b class="progress-indicator">
-      Question {{ questionNo }} /
+      kueसटioन_परसhन {{ questionNo }} /
       {{ quizzes.questions.length }}
     </b>
     <b class="question">{{ quiz.question }}</b>
@@ -113,15 +113,15 @@ const next = computed(() => {
     </ul>
     <div class="navigation">
       <div v-show="questionNo != 1">
-        <router-link :to="{ name: 'quiz', params: { id: previous } }"> Previous </router-link>
+        <router-link :to="{ name: 'quiz', params: { id: previous } }"> परeवiouस_पichलa </router-link>
       </div>
 
       <div v-if="questionNo < quizLength">
-        <router-link :to="{ name: 'quiz', params: { id: next } }"> Next </router-link>
+        <router-link :to="{ name: 'quiz', params: { id: next } }"> नexट_अgलa </router-link>
       </div>
       <div v-else>
         <button class="submit-btn" type="button" @click="handleSubmit" :disabled="isFinished">
-          Submit
+          सuबमiट_जमaकरo
         </button>
       </div>
     </div>

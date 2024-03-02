@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router'
       <p>zava8.github.io ztr8</p>
     </div>
     <div>
-      <router-link to="/question/1" class="start"> Start Quiz </router-link>
+      <router-link to="/question/1" class="start">अao kuiz सhuरu करe</router-link>
     </div>
   </div>
 </template>
