@@ -5,8 +5,8 @@ import { RouterLink } from 'vue-router'
 <template>
   <div class="container">
     <div>
-      <h2>Welcome to Quizzy</h2>
-      <p>This is a demo quiz app bulit with VueJS</p>
+      <h2>मuलटiपलe choice kueसटioन मcक kuiz मe यuमहaरa सवagतम</h2>
+      <p>zava8.github.io ztr8</p>
     </div>
     <div>
       <router-link to="/question/1" class="start"> Start Quiz </router-link>

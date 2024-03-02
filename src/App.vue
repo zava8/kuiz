@@ -3,7 +3,7 @@
 <template>
   <div class="app">
     <header>
-      <h1>Quizzy</h1>
+      <h1>मuलटiपलe choice kueसटioन kuiz</h1>
     </header>
     <main>
       <router-view v-slot="{ Component, route }">
